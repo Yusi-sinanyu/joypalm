@@ -120,12 +120,14 @@
   left: 0;
 }
 
+/* 這裡是這個home圖層中的位置向左移動了 */
 .home .image-3 {
   position: absolute;
   width: 796px;
   height: 46px;
   top: 0;
   left: 799px;
+  transform: translateX(-8px);
 }
 
 .home .image-4 {
@@ -258,6 +260,8 @@
   top: 289px;
   left: 869px;
   object-fit: cover;
+  /* 向下移動5px */
+  transform: translateY(5px);
 }
 
 .home .image-13 {
@@ -402,13 +406,16 @@
   line-height: normal;
 }
 
+/* 這個不是沒有用的, 是包含在了一個更大的層中 */
 .home .lamb-user {
   position: absolute;
   width: 48px;
   height: 48px;
   top: 0;
   left: 331px;
-  object-fit: cover;
+  object-fit: fit;
+  /* 位置向左移動 */
+  transform: translateX(-2px);
 }
 
 /* 把.studies改成這個 */
@@ -932,6 +939,25 @@
   left: 15px;
 }
 
+/* .studies .lamb-22 {
+  position: absolute;
+  width: px;
+  height: 421px;
+  top: 19px;
+  left: 15px;
+  transform: translateY(-200px);
+} */
+
+/* 改變了大小和位子,和頁面對齊方式為下邊和左邊 */
+.studies .lamb-22 {
+  position: fixed; /* 使用固定定位 */
+  width: auto; /* 修復 width 為 undefined 的問題 */
+  height: 320px;
+  bottom: 78px; /* 下邊距瀏覽器底部 px */
+  left: 220px; /* 水平居中 */
+  transform: translateX(-50%); /* 左右居中，移動自身寬度一半 */
+}
+
 .project .hoolilogo-2 {
   position: absolute;
   width: 472px;
@@ -1335,21 +1361,23 @@
 }
 
 .project .rectangle-4 {
+  position: fixed; /* 更改為固定定位 */
   width: 1728px;
   height: 78px;
-  top: 241px;
+  bottom: 0; /* 將元素對齊到瀏覽器底部 */
+  left: 50%; /* 相對於瀏覽器窗口的寬度取一半 */
+  transform: translateX(-50%); /* 移動元素左邊界，使其中心對齊瀏覽器的中線 */
   background-color: #ce6b54;
-  position: absolute;
-  left: 0;
 }
 
 .project .image-18 {
-  position: absolute;
-  width: 458px;
   height: 319px;
-  top: 0;
-  left: 0;
-  object-fit: cover;
+  position: fixed; /* 使用固定定位 */
+  width: auto; /* 修復 width 為 undefined 的問題 */
+  bottom: 78px; /* 下邊距瀏覽器底部 px */
+  left: 220px; /* 水平居中 */
+  transform: translateX(-50%); /* 左右居中，移動自身寬度一半 */
+
 }
 
 
@@ -1538,6 +1566,7 @@
   position: relative;
   width: 205px;
   height: 60px;
+  transform: translateY(-4px);
 }
 
 .studies .text-wrapper {
@@ -1611,6 +1640,7 @@
   font-size: 32px;
   letter-spacing: 0;
   line-height: normal;
+  transform: translateY(3px);
 }
 
 .studies .lamb-user {
@@ -1831,12 +1861,24 @@
   height: 319px;
 }
 
-.studies .rectangle {
+/* .studies .rectangle {
   position: absolute;
   width: 1728px;
   height: 78px;
   top: 241px;
   left: 0;
+  background-color: #ce6b54;
+} */
+
+
+/* 將元素移動到瀏覽器底部，並讓其水平居中 */
+.studies .rectangle {
+  position: fixed; /* 更改為固定定位 */
+  width: 1728px;
+  height: 78px;
+  bottom: 0; /* 將元素對齊到瀏覽器底部 */
+  left: 50%; /* 相對於瀏覽器窗口的寬度取一半 */
+  transform: translateX(-50%); /* 移動元素左邊界，使其中心對齊瀏覽器的中線 */
   background-color: #ce6b54;
 }
 
@@ -2079,6 +2121,7 @@
   height: 51px;
   top: 6px;
   left: 0;
+  transform: translateY(-8px);
 }
 
 .team .text-wrapper-2 {
@@ -2101,6 +2144,8 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  /* 同時移動 X 和 Y */
+  transform: translate(15px, 6px);
 }
 
 .team .home {
